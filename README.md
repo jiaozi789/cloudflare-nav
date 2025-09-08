@@ -341,7 +341,7 @@ AUTH_ENABLE = "false"
 AUTH_USER = "admin"
 AUTH_PASS = "123456"
 ```
-- 注意：如果不适用wrangler.toml配置,则需要在手动在workers和page的设置中添加变量机密中添加
+- 注意：如果不使用wrangler.toml配置,则需要在手动在workers和page的设置中添加变量机密中添加，默认值是不开启，如果开启请将AUTH_ENABLE = "true"
 
 
 ### 开发说明
