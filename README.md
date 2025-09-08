@@ -311,8 +311,7 @@ database_id = "你的数据库ID"
 
 3. 部署数据库架构和初始数据
 ```bash
-wrangler d1 execute nav-db --file=./schema.sql
-wrangler d1 execute nav-db --file=./migrations/0001_seed_data.sql
+wrangler d1 execute nav-db --file=./schema.sql --remote
 ```
 
 4. 部署到Cloudflare Workers
@@ -326,13 +325,28 @@ wrangler deploy
 1. 访问 `/admin` 路由
 2. 默认凭据：
    - 用户名：admin
-   - 密码：admin123
+   - 密码：123456
 3. 首次登录后请立即修改密码
 
 #### 站点设置
 - 可在管理面板配置站点标题
 - 可通过管理界面管理分类
 - 可在管理面板添加、编辑或删除链接
+
+### 导航页面添加授权访问
+```javascript
+   const AUTH_USER = env.AUTH_USER || 'admin';
+   const AUTH_PASS = env.AUTH_PASS || '123456';  
+```
+或者直接修改wrangler.toml,AUTH_ENABLE表示是否启用导航栏授权.
+```javascript
+[vars]
+AUTH_ENABLE = "false"
+AUTH_USER = "admin"
+AUTH_PASS = "123456"
+```
+
+
 
 ### 开发说明
 

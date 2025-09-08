@@ -1044,19 +1044,22 @@ export default {
 
     try {
 
-      const AUTH_USER = env.AUTH_USER || 'admin';
-      const AUTH_PASS = env.AUTH_PASS || 'liaomin';  
-      const authHeader = request.headers.get('Authorization');
-      const expectedAuth = 'Basic ' + btoa(AUTH_USER + ':' + AUTH_PASS);
+      const AUTH_ENABLE = env.AUTH_ENABLE || 'true';
+      if (AUTH_ENABLE === 'true') {
+        const AUTH_USER = env.AUTH_USER || 'admin';
+        const AUTH_PASS = env.AUTH_PASS || '123456';  
+        const authHeader = request.headers.get('Authorization');
+        const expectedAuth = 'Basic ' + btoa(AUTH_USER + ':' + AUTH_PASS);
 
-      if (!authHeader || authHeader !== expectedAuth) {
-        return new Response('需要认证', {
-            status: 401,
-            headers: {
-            'WWW-Authenticate': 'Basic realm="安全区域", charset="UTF-8"',
-            'Content-Type': 'text/plain;charset=utf-8'
-            }
-        });
+        if (!authHeader || authHeader !== expectedAuth) {
+            return new Response('需要认证', {
+                status: 401,
+                headers: {
+                'WWW-Authenticate': 'Basic realm="安全区域", charset="UTF-8"',
+                'Content-Type': 'text/plain;charset=utf-8'
+                }
+            });
+        }
       }
       // 获取网站标题
       const { results: configs } = await env.DB.prepare('SELECT value FROM configs WHERE key = ?').bind('site_title').all();

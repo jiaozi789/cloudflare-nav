@@ -4,10 +4,11 @@ main = "src/index.js"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 
-# 环境变量配置
+# 环境变量配置,默认导航页授权账号密码，管理员的账号密码在schema.sql中，默认相同
 [vars]
+AUTH_ENABLE = "true"
 AUTH_USER = "admin"
-AUTH_PASS = "liaomin999"
+AUTH_PASS = "123456"
 
 [[d1_databases]]
 binding = "DB"

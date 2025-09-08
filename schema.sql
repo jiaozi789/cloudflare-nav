@@ -104,5 +104,5 @@ INSERT INTO links (category_id, name, url, description) VALUES
 
 -- Insert default admin user (username: admin, password: admin123)
 INSERT INTO admins (username, password_hash) VALUES
-('admin', '$2a$10$zG1DQ3/bwuhB6PKC7LZPzOyR7a0F9TgATqvN4QG.fHGKodAhXtPYi');
+('admin', '$2a$10$oLta.bs3kyYkO5lOd0kkze1YTys7rIaWg1r.ogLwxDKzr.DcOhtzW');
 
