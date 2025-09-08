@@ -169,7 +169,7 @@ wrangler deploy
 - 网站地址将是：`https://nav.[你的workers子域名].workers.dev`
 - 管理后台：`https://nav.[你的workers子域名].workers.dev/admin`
   - 默认用户名：`admin`
-  - 默认密码：`admin123`
+  - 默认密码：`123456`
 
 ⚠️ 重要提示：
 - 首次登录后请立即修改默认密码
