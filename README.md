@@ -334,18 +334,14 @@ wrangler deploy
 - 可在管理面板添加、编辑或删除链接
 
 ### 导航页面添加授权访问
-```javascript
-   const AUTH_USER = env.AUTH_USER || 'admin';
-   const AUTH_PASS = env.AUTH_PASS || '123456';  
-```
-或者直接修改wrangler.toml,AUTH_ENABLE表示是否启用导航栏授权.
+直接修改wrangler.toml,AUTH_ENABLE表示是否启用导航栏授权.
 ```javascript
 [vars]
 AUTH_ENABLE = "false"
 AUTH_USER = "admin"
 AUTH_PASS = "123456"
 ```
-
+- 注意：如果不适用wrangler.toml配置,则需要在手动在workers和page的设置中添加变量机密中添加
 
 
 ### 开发说明
