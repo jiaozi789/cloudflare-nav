@@ -225,7 +225,7 @@ wrangler d1 execute nav-db --command "DROP TABLE IF EXISTS links, categories, ad
 1. Access `/admin` route
 2. Default credentials:
    - Username: admin
-   - Password: admin123
+   - Password: 123456
 3. Change password immediately after first login
 
 #### Site Settings
