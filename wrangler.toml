@@ -1,0 +1,23 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "nav"
+main = "src/index.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# 环境变量配置
+[vars]
+AUTH_USER = "admin"
+AUTH_PASS = "liaomin999"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "nav-db"
+database_id = "97cffd04-2f00-4632-808d-791fff2f45de"
+migrations_dir = "migrations"
+
+[build]
+command = ""
+watch_dir = "src"
+
+[site]
+bucket = "./src"
